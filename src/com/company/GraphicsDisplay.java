@@ -43,7 +43,7 @@ public class GraphicsDisplay extends JPanel {
 // Сконструировать необходимые объекты, используемые в рисовании
 // Перо для рисования графика
         graphicsStroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT,
-                BasicStroke.JOIN_ROUND, 10.0f, new float[] { 4, 1, 1, 1, 2, 1, 1, 1, 4, 1} , 0.0f);
+                BasicStroke.JOIN_ROUND, 10.0f, new float[] { 8, 2, 2, 2, 4, 2, 2, 2, 8, 2} , 0.0f);
 // Перо для рисования осей координат
         axisStroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT,
                 BasicStroke.JOIN_MITER, 10.0f, null, 0.0f);
