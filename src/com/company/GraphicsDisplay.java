@@ -155,7 +155,7 @@ minY
 // Выбрать линию для рисования графика
         canvas.setStroke(graphicsStroke);
 // Выбрать цвет линии
-        canvas.setColor(Color.BLUE);
+        canvas.setColor(Color.LIGHT_GRAY);
 /* Будем рисовать линию графика как путь, состоящий из множества
 сегментов (GeneralPath)
 * Начало пути устанавливается в первую точку графика, после чего
@@ -187,14 +187,12 @@ minY
         for (Double[] point: graphicsData) {
 // Инициализировать треугольник как объект для представления маркера
             if((Math.abs(point[1]-point[1].intValue())<=0.1)||(Math.abs(point[1]-point[1].intValue())>=0.9)){
-                canvas.setColor(Color.RED);
+                canvas.setColor(Color.RED);//если значение функции в диапазоне 0.1 от целого числа, то треугольник красный
             }
             else
                 {
-                    canvas.setColor(Color.BLACK);
+                    canvas.setColor(Color.BLACK);//в противном случае чёрный
                 }
-
-
 // Строим маркер треугольника
             Point2D.Double center=xyToPoint(point[0],point[1]);
             canvas.draw(new Line2D.Double(shiftPoint(center,-3,3),shiftPoint(center,0,-3)));
