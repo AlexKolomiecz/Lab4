@@ -14,9 +14,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import javax.swing.JPanel;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
+
 @SuppressWarnings("serial")
 public class GraphicsDisplay extends JPanel {
     // Список координат точек для построения графика
@@ -268,6 +266,12 @@ minY
             arrow.closePath();
             canvas.draw(arrow); // Нарисовать стрелку
             canvas.fill(arrow); // Закрасить стрелку
+
+            Rectangle2D centerBounds = axisFont.getStringBounds("0", context);
+            Point2D.Double centerLabelPos = xyToPoint(0, 0);
+            canvas.drawString("0", (float)centerLabelPos.getX() + 10,
+                    (float)(centerLabelPos.getY() - centerBounds.getY()));
+
 // Нарисовать подпись к оси X
 // Определить, сколько места понадобится для надписи "x"
             Rectangle2D bounds = axisFont.getStringBounds("x", context);
